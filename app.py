@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 import sqlite3
 
 app = Flask(__name__)
@@ -80,10 +80,12 @@ def register():
 def login():
     return "Login page coming soon"
 
-
 @app.route("/cars")
 def cars():
-    return "Cars page coming soon"
+    db = get_db()
+    cars_list = db.execute("SELECT * FROM cars").fetchall()
+    db.close()
+    return render_template("cars.html", cars=cars_list)
 
 
 @app.route("/book/<int:car_id>", methods=["GET", "POST"])
