@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Car</title>
+</head>
+
+<body>
+
+    <h1>
+        Book {{ car["make"] }} {{ car["model"] }}
+    </h1>
+
+    <p>
+        Category: {{ car["category"] }}
+    </p>
+
+    <p>
+        Price: ${{ car["price_per_day"] }}/day
+    </p>
+
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+
+    <form method="POST">
+
+        <label>Start Date:</label>
+
+        <input
+            type="date"
+            name="start_date"
+            required
+        >
+
+        <br><br>
+
+        <label>End Date:</label>
+
+        <input
+            type="date"
+            name="end_date"
+            required
+        >
+
+        <br><br>
+
+        <button type="submit">
+            Confirm Booking
+        </button>
+
+    </form>
+
+    <br>
+
+    <a href="/cars">
+        Back to Cars
+    </a>
+
+</body>
+</html>

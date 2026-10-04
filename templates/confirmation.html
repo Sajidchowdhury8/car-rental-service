@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Confirmed</title>
+</head>
+
+<body>
+
+    <h1>Booking Confirmed!</h1>
+
+    <p>
+        You booked
+        {{ car["make"] }}
+        {{ car["model"] }}.
+    </p>
+
+    <p>
+        Start Date:
+        {{ start_date }}
+    </p>
+
+    <p>
+        End Date:
+        {{ end_date }}
+    </p>
+
+    <a href="/cars">
+        Back to Cars
+    </a>
+
+</body>
+</html>

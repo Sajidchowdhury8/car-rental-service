@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available Cars</title>
+</head>
+
+<body>
+
+    <h1>Available Cars</h1>
+
+    {% for car in cars %}
+
+        <h2>
+            {{ car["make"] }} {{ car["model"] }}
+        </h2>
+
+        <p>
+            Category: {{ car["category"] }}
+        </p>
+
+        <p>
+            Price: ${{ car["price_per_day"] }}/day
+        </p>
+
+        {% if car["available"] %}
+
+            <p>Status: Available</p>
+
+            <a href="/book/{{ car['id'] }}">
+                Book
+            </a>
+
+        {% else %}
+
+            <p>Status: Not Available</p>
+
+        {% endif %}
+
+        <hr>
+
+    {% endfor %}
+
+    <a href="/logout">
+        Logout
+    </a>
+
+</body>
+</html>
